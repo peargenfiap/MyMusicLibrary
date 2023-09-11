@@ -37,6 +37,13 @@ class MusicAdapter : RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
         return musicList.size
     }
 
+    fun setData(list: List<MusicModel>) {
+        musicList.clear()
+        musicList.addAll(list)
+
+        notifyDataSetChanged()
+    }
+
     override fun onBindViewHolder(holder: MusicViewHolder, position: Int) {
         holder.bindView(musicList[position])
     }
